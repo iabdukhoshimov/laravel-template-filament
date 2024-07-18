@@ -19,7 +19,7 @@ class StateResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-presentation-chart-line';
 
     protected static ?string $navigationLabel = 'State';
-    
+
     protected static ?string $modelLabel = 'States';
 
     protected static ?string $navigationGroup = 'System Management';
@@ -30,9 +30,9 @@ class StateResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('country_id')
-                    ->required()
-                    ->numeric(),
+                Forms\Components\Select::make('country_id')
+                    ->relationship('country')
+                    ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
