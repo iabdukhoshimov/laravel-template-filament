@@ -1,0 +1,5 @@
+applications:
+  - root: /app/public
+    host: "*"
+    port: 8080
+    front_controller: /index.php
